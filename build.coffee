@@ -12,7 +12,7 @@ module.exports =
     fromDir = (startPath, filter, addTo) ->
         console.log('[GETFILES] Starting from dir '+startPath+'/');
         if !fs.existsSync(startPath)
-            throw '[GETFILES][ERROR] No directory provided. '+ startPath
+            throw clr.'[GETFILES][ERROR] No directory provided. '+ startPath
             return
         files = fs.readdirSync(startPath)
         i = 0
@@ -33,6 +33,6 @@ module.exports =
         return
     compileFiles = (list) ->
         for i in list
-            console.log '[DEBUG][COMPILEFILES] Will run command: "'+'coffee -c '+ i+'"'
+            console.log clr.yellow '[DEBUG][COMPILEFILES] Will run command: "'+'coffee -c '+ i+'"'
             cmd.run('coffee -c ""'+i+'"')        
     
