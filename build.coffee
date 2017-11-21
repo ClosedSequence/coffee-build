@@ -2,6 +2,7 @@
 cmd = require 'node-cmd'
 path = require 'path'
 fs = require 'fs'
+clr = require 'cli-color'
 
 # write functions
 module.exports =
