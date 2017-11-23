@@ -1,0 +1,8 @@
+KEY:
+    !!: issue
+    *: item
+    X: done
+    []: note
+    (): label holder
+
+*(!!) Unexpected newline @ 17:5

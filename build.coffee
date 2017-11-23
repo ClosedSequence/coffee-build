@@ -4,15 +4,20 @@ path = require 'path'
 fs = require 'fs'
 clr = require 'cli-color'
 
-# write functions
+# create colors #
+error = clr.red.bold
+debug = clr.yellow.bold
+status = clr.green.bold
+
+# write functions #
 module.exports =
     findCommand = (filename, command) ->
-        ret = filename.replace("[fn]", filename)
-        return ret
+        out = filename.replace("[fn]", filename)
+        return(out)
     fromDir = (startPath, filter, addTo) ->
-        console.log('[GETFILES] Starting from dir '+startPath+'/');
+        console.log status('[GETFILES]')+' Starting from dir '+startPath+'/'
         if !fs.existsSync(startPath)
-            throw clr.'[GETFILES][ERROR] No directory provided. '+ startPath
+            throw error('[GETFILES][ERROR]')+' No directory provided. '+ startPath
             return
         files = fs.readdirSync(startPath)
         i = 0
@@ -24,15 +29,15 @@ module.exports =
                     fromDir filename, filter
                     #recurse
                 else if filename.indexOf(filter) >= 0
-                    console.log '[GETFILES] Found: '+ filename
+                    console.log status('[GETFILES]') + ' Found: '+ filename
                     # push filename to file array #
                     addTo.push filename
-                    console.log '[GETFILES] Pushed ' + filename + ' to array'
-                    console.log '[GETFILES] Files to compile: '+addTo
+                    console.log status('[GETFILES]') + ' Pushed ' + filename + ' to array'
+                    console.log status('[GETFILES]')+' Files to compile: '+addTo
             i++
         return
     compileFiles = (list) ->
         for i in list
-            console.log clr.yellow '[DEBUG][COMPILEFILES] Will run command: "'+'coffee -c '+ i+'"'
+            console.log debug('[DEBUG][COMPILEFILES]')+' Will run command: "'+'coffee -c '+ i+'"'
             cmd.run('coffee -c ""'+i+'"')        
     
