@@ -1,0 +1,28 @@
+{
+  "name": "build.coffee",
+  "version": "1.0.0",
+  "description": "coffeescript program to bulk compile/run a command on multiple files with a single file extension",
+  "main": "build.js",
+  "dependencies": {
+    "node-cmd": "^3.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ClosedSequence/coffee-build.git"
+  },
+  "keywords": [
+    "compile",
+    "command",
+    "coffeescript"
+  ],
+  "author": "Nathan Hunt",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ClosedSequence/coffee-build/issues"
+  },
+  "homepage": "https://github.com/ClosedSequence/coffee-build#readme"
+}
