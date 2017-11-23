@@ -4,6 +4,7 @@
   "description": "coffeescript program to bulk compile/run a command on multiple files with a single file extension",
   "main": "build.js",
   "dependencies": {
+    "cli-color": "^1.2.0",
     "node-cmd": "^3.0.0"
   },
   "devDependencies": {},
