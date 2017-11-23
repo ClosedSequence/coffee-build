@@ -5,4 +5,6 @@ KEY:
     []: note
     (): label holder
 
-*(!!) Unexpected newline @ 17:5
+*(!!, X) Unexpected newline @ 17:5[
+    Solved: moved module.exports to final line, put functions into class.
+]

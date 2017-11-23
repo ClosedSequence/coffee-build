@@ -10,9 +10,9 @@ debug = clr.yellow.bold
 status = clr.green.bold
 
 # write functions #
-module.exports =
+class build
     findCommand = (filename, command) ->
-        out = filename.replace("[fn]", filename)
+        out = filename.replace "[fn]", filename
         return(out)
     fromDir = (startPath, filter, addTo) ->
         console.log status('[GETFILES]')+' Starting from dir '+startPath+'/'
@@ -34,10 +34,14 @@ module.exports =
                     addTo.push filename
                     console.log status('[GETFILES]') + ' Pushed ' + filename + ' to array'
                     console.log status('[GETFILES]')+' Files to compile: '+addTo
+                else
+                    throw ' '
+                    console.log error('[GETFILES][ERROR] ')+"No files to compile!"
             i++
         return
     compileFiles = (list) ->
         for i in list
             console.log debug('[DEBUG][COMPILEFILES]')+' Will run command: "'+'coffee -c '+ i+'"'
             cmd.run('coffee -c ""'+i+'"')        
-    
+
+module.exports = build
